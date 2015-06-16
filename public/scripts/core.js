@@ -1,0 +1,1 @@
+angular.module('wipms', ['wipmsController', 'wipmsService']);
