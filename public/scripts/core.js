@@ -1,25 +1,25 @@
-angular.module('wipms', ['itemController', 'ngRoute'])
+angular.module('wipms', ['ngRoute'])
 .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'itemController'
+        controller: 'mainController'
       })
       .when('/store', {
         templateUrl: 'views/store.html',
-        controller: 'itemController'
+        controller: 'mainController'
       })
       .when('/retrieve', {
         templateUrl: 'views/retrieve.html',
-        controller: 'itemController'
+        controller: 'mainController'
       })
       .when('/locDrilldown', {
         templateUrl: 'views/locDrilldown.html',
-        controller: 'itemController'
+        controller: 'mainController'
       })
       .when('/locStored', {
         templateUrl: 'views/locStored.html',
-        controller: 'itemController'
+        controller: 'mainController'
       })
       .otherwise({
         redirectTo: '/'

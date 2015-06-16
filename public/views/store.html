@@ -1,8 +1,8 @@
 <div class="jumbotron">
   <h2>What are you storing?</h2>
 </div>
-<form name="itemLocStorage" ng-controller="StoreCtrl as store" ng-submit="store.createItem(item)">
-	<input type="text" name="item" ng-model="item" required novalidate class="form-control input-lg" placeholder="your item">
+<form name="itemLocStorage" ng-controller="mainController as ic" ng-submit="ic.createItem(item)">
+	<input type="text" name="item" ng-model="formData.name" required novalidate class="form-control input-lg" placeholder="your item">
 	<input type="submit" value="Submit" class="btn btn-primary btn-block">
 </form>
 

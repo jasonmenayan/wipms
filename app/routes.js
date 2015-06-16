@@ -2,6 +2,7 @@ var Item = require('./models/item');
 
 function getItems(res){
 	Item.find(function(err, items) {
+			console.log('items2');
 			if (err) {
 				res.send(err)
 			}
@@ -9,11 +10,12 @@ function getItems(res){
 		});
 };
 
-module.exports = function(app) {
+module.exports = function addRoutes (app) {
 
 	// api ---------------------------------------------------------------------
 	// get all items
 	app.get('/api/items', function(req, res) {
+		console.log('items');
 		getItems(res);
 	});
 

@@ -1,4 +1,4 @@
-angular.module('itemService', [])
+angular.module('wipms')
 	.factory('Items', ['$http', function($http) {
 		return {
 			get : function() {
