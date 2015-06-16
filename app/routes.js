@@ -38,7 +38,7 @@ module.exports = function(app) {
 		}, function(err, item) {
 			if (err)
 				res.send(err);
-			getItems(res); // get and return all items after you create another
+			getItems(res); // get and return all items after you create another	
 		});
 	});
 

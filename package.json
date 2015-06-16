@@ -1,14 +1,16 @@
 {
-  "name"         : "wipms",
-  "version"      : "0.0.0",
-  "description"  : "Where'd I Put My Stuff?",
-  "main"         : "server.js",
-  "author"       : "Jason Menayan",
-  "dependencies" : {
-    "express"    : "~4.6.1",
-    "mongoose"   : "~3.8.13",
-    "morgan"     : "~1.1.1",
+  "name": "wipms",
+  "version": "0.0.0",
+  "description": "Where'd I Put My Stuff?",
+  "main": "server.js",
+  "author": "Jason Menayan",
+  "dependencies": {
+    "angular": "^1.4.1",
+    "angular-route": "^1.4.1",
     "body-parser": "~1.4.3",
-    "method-override": "~2.1.1"
-    }
+    "express": "~4.6.1",
+    "method-override": "~2.1.1",
+    "mongoose": "~3.8.13",
+    "morgan": "~1.1.1"
+  }
 }

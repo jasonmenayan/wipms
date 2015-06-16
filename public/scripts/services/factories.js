@@ -1,7 +1,4 @@
 angular.module('itemService', [])
-
-	// super simple service
-	// each function returns a promise object 
 	.factory('Items', ['$http', function($http) {
 		return {
 			get : function() {
