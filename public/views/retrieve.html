@@ -7,5 +7,5 @@
 	</form>
 <hr/>
 <ul ng-show="searchItem">
-	<li ng-repeat="item in items | filter:{name:searchItem}">{{item.name}}: {{item.location}}</li>
+	<li ng-repeat="item in items | filter:{name:searchItem}"><h1>{{item.name}} :: {{item.location}}</h1></li>
 </ul>

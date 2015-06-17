@@ -4,15 +4,6 @@ angular.module('wipms')
 	.controller('mainController', ['$scope','$http','Items', function($scope, $http, Items) {
 		$scope.formData = {};
 		$scope.page = 1;
-
-		// GET =====================================================================
-		// when landing on the page, get all items and show them
-		// use the service to get all the items
-		// Items.get()
-		// 	.success(function(data) {
-		// 		$scope.items = data;
-		// 	});
-
 		$scope.locTree = [
   			'Bedroom',
   			'Living room',
@@ -50,10 +41,9 @@ angular.module('wipms')
 		};
 
 		$scope.createItem = function() {
-			// validate the formData to make sure that something is there
+			// TODO: validate the formData to make sure that something is there
 			// if form is empty, nothing will happen
-				// TODO: error 
-				// call the create function from our service (returns a promise object)
+				// TODO: error handling
 				Items.create($scope.item)
 					.success(function(data) {
 						$scope.page = 3;
