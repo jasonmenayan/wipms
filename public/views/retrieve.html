@@ -1,3 +1,11 @@
-<div class="jumbotron">
+<div class="jumbotron" ng-init="loadItems()">
   <h2>What are you trying to find?</h2>
 </div>
+	<form name="itemSearch" ng-submit="SOMETHING()">
+		<input type="text" name="item" ng-model="searchItem" required novalidate class="form-control input-lg" placeholder="item you're looking for">
+		<input type="submit" value="Submit" class="btn btn-primary btn-block">
+	</form>
+<hr/>
+<ul ng-show="searchItem">
+	<li ng-repeat="item in items | filter:{name:searchItem}">{{item.name}}: {{item.location}}</li>
+</ul>

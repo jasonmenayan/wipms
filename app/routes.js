@@ -2,7 +2,6 @@ var Item = require('./models/item');
 
 function getItems(res){
 	Item.find(function(err, items) {
-			console.log('items2');
 			if (err) {
 				res.send(err)
 			}
@@ -24,23 +23,12 @@ module.exports = function addRoutes (app) {
 		// create an item, information comes from AJAX request from Angular
 		Item.create({
 			name: req.body.name,
-			loc: req.body.loc,
+			location: req.body.location,
 			date: Date.now()
 		}, function(err, item) {
 			if (err)
 				res.send(err);
 			getItems(res); // get and return all items after you create another
-		});
-	});
-
-	// delete a item
-	app.delete('/api/items/:item_id', function(req, res) {
-		Item.remove({
-			_id : req.params.item_id
-		}, function(err, item) {
-			if (err)
-				res.send(err);
-			getItems(res); // get and return all items after you create another	
 		});
 	});
 

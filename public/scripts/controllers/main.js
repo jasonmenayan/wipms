@@ -3,6 +3,7 @@ angular.module('wipms')
 	// inject the Item service factory into our controller
 	.controller('mainController', ['$scope','$http','Items', function($scope, $http, Items) {
 		$scope.formData = {};
+		$scope.page = 1;
 
 		// GET =====================================================================
 		// when landing on the page, get all items and show them
@@ -12,33 +13,60 @@ angular.module('wipms')
 		// 		$scope.items = data;
 		// 	});
 
+		$scope.locTree = [
+  			'Bedroom',
+  			'Living room',
+  			'Home office',
+  			'Kitchen',
+  			'Bathroom',
+  			'Guest bedroom',
+  			'Basement',
+  			'Bedroom: Closet',
+  			'Bedroom: Under bed',
+  			'Living room: Entertainment center',
+  			'Living room: Hall closet',
+  			'Living room: Mantle',
+  			'Home office: Filing cabinet',
+  			'Home office: Closet',
+  			'Home office: Archive bin',
+  			'Home office: Cabinets',
+  			'Kitchen: Spice cabinet',
+  			'Kitchen: Pantry',
+  			'Kitchen: Top of refrigerator',
+  			'Bathroom: Medicine cabinet',
+  			'Guest bedroom: Short chest of drawers',
+  			'Guest bedroom: Tall chest of drawers',
+  			'Guest bedroom: Closet',
+  			'Basement: Under stairs',
+  			'Basement: Box storage'
+  	];
+
 		// CREATE ==================================================================
 		// when submitting the add form, send the text to the node API
-		$scope.createItem = function() {
-
-			// validate the formData to make sure that something is there
-			// if form is empty, nothing will happen
-			if ($scope.formData.name != undefined) {
-
-				// call the create function from our service (returns a promise object)
-				Items.create($scope.formData)
-
-					// if successful creation, call our get function to get all the new items
-					.success(function(data) {
-						$scope.formData = {}; // clear the form so our user is ready to enter another
-						$scope.items = data; // assign our new list of items
-					});
+		$scope.stepOne = function() {
+			if ($scope.item.name != undefined) {
+				$scope.page = 2;
 			}
 		};
 
-		// DELETE ==================================================================
-		// delete a item after checking it
-		$scope.deleteItem = function(id) {
-
-			Items.delete(id)
-				// if successful creation, call our get function to get all the new items
-				.success(function(data) {
-					$scope.items = data; // assign our new list of items
-				});
+		$scope.createItem = function() {
+			// validate the formData to make sure that something is there
+			// if form is empty, nothing will happen
+				// TODO: error 
+				// call the create function from our service (returns a promise object)
+				Items.create($scope.item)
+					.success(function(data) {
+						$scope.page = 3;
+					});
 		};
+
+		$scope.loadItems = function() {
+			Items.get()
+				.success(function(data) {
+					console.log(data);
+					$scope.items = data;
+				})
+		};
+		// $scope.loadItems();
+
 	}]);

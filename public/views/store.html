@@ -1,9 +1,25 @@
-<div class="jumbotron">
-  <h2>What are you storing?</h2>
+<div ng-show="page === 1">
+	<div class="jumbotron">
+	  <h2>What are you storing?</h2>
+	</div>
+	<form name="itemLocStorage" ng-submit="stepOne()">
+		<input type="text" name="item" ng-model="item.name" required novalidate class="form-control input-lg" placeholder="your item">
+		<input type="submit" value="Submit" class="btn btn-primary btn-block">
+	</form>
 </div>
-<form name="itemLocStorage" ng-controller="mainController as ic" ng-submit="ic.createItem(item)">
-	<input type="text" name="item" ng-model="formData.name" required novalidate class="form-control input-lg" placeholder="your item">
-	<input type="submit" value="Submit" class="btn btn-primary btn-block">
-</form>
 
+<div ng-show="page === 2">
+	<div class="jumbotron">
+	  <h2>Where are you storing {{item.name}}?</h2>
+	</div>
+		<label ng-repeat="loc in locTree" style="display:block">
+		<input name="locChoice" type="radio" value="{{loc}}" ng-model="item.location" />
+		{{loc}}
+		</label>
+		<input type="submit" value="Submit" class="btn btn-primary btn-block" ng-click="createItem()">
+</div>
 
+<div class="jumbotron" ng-show="page === 3">
+  <h2>Stored!</h2>
+  <p>Your {{item.name}} is stored in {{item.location}}</p>
+</div>
