@@ -5,16 +5,16 @@ function getItems(res){
 			if (err) {
 				res.send(err)
 			}
-			res.json(items); // return all items in JSON format
+			res.json(items); // return all items in JSON
 		});
 };
 
 module.exports = function addRoutes (app) {
 
-	// api ---------------------------------------------------------------------
+	// API ---------------------------------------------------------------------
+	
 	// get all items
 	app.get('/api/items', function(req, res) {
-		console.log('items');
 		getItems(res);
 	});
 

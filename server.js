@@ -28,4 +28,4 @@ console.log("App listening on port " + port);
 
 
 // for Mongo command line:
-// mongo apollo.modulusmongo.net:27017/om9evaGi -u <user> -p <pass>
+// mongo apollo.modulusmongo.net:27017/om9evaGi -u jasonmenayan -p (pw)

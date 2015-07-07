@@ -13,14 +13,6 @@ angular.module('wipms', ['ngRoute'])
         templateUrl: 'views/retrieve.html',
         controller: 'mainController'
       })
-      .when('/locDrilldown', {
-        templateUrl: 'views/locDrilldown.html',
-        controller: 'mainController'
-      })
-      .when('/locStored', {
-        templateUrl: 'views/locStored.html',
-        controller: 'mainController'
-      })
       .otherwise({
         redirectTo: '/'
       });

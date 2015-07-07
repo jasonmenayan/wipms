@@ -1,25 +1,28 @@
 <div ng-show="page === 1">
-	<div class="jumbotron">
+
+	<div class="row">
+		<div class="jumbotron">
 	  <h2>What are you storing?</h2>
 	</div>
-	<form name="itemLocStorage" ng-submit="stepOne()">
-		<input type="text" name="item" ng-model="item.name" required novalidate class="form-control input-lg" placeholder="your item">
-		<input type="submit" value="Submit" class="btn btn-primary btn-block">
-	</form>
+		<form name="itemLocStorage" ng-submit="stepOne()">
+			<input type="text" style="font-size:24pt; height:70px; line-height: 70px;" name="item" ng-model="item.name" required novalidate class="form-control input-lg" placeholder="your item">
+			<input type="submit" style="font-size:24pt; height:50px;" value="Submit" class="btn btn-primary btn-block">
+		</form>
+	</div>
 </div>
 
 <div ng-show="page === 2">
 	<div class="jumbotron">
-	  <h2>Where are you storing {{item.name}}?</h2>
+	  <h2>Where are you storing your {{item.name}}?</h2>
 	</div>
 		<label ng-repeat="loc in locTree" style="display:block">
-		<input name="locChoice" type="radio" value="{{loc}}" ng-model="item.location" />
+		<input name="locChoice" type="radio" value="{{loc}}" ng-model="item.location" style="font-size:24pt;" />
 		{{loc}}
 		</label>
-		<input type="submit" value="Submit" class="btn btn-primary btn-block" ng-click="createItem()">
+		<input type="submit" value="Submit" style="font-size:24pt; height: 50px;" class="btn btn-primary btn-block" ng-click="createItem()">
 </div>
 
 <div class="jumbotron" ng-show="page === 3">
-  <h2>Stored!</h2>
-  <p>Your {{item.name}} is stored in {{item.location}}</p>
+  <h2>Stored!</h2><br/><br/>
+  <p style="font-size:24pt;">Your <strong>{{item.name}}</strong> is stored in <strong>{{item.location}}</strong></p>
 </div>

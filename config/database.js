@@ -1,5 +1,6 @@
 module.exports = {
 
 	// the database url to connect
-	url : 'mongodb://jasonmenayan:lalala@apollo.modulusmongo.net:27017/om9evaGi'
+	url : process.env.MONGOLAB_URI || 'mongodb://localhost/wipmsdb'
 }
+
